@@ -2,7 +2,7 @@
 
 # $ python masssms.py targetfile
 
-# You must create an accounts.txt file with at least 1 account to use
+# You must create an accounts.txt file with at least 1 account to use, the target "can" be obtained at runtime
 # Linked Accounts use basic starttls authentication via SMTP server
 #    ACCOUNT FILE SYNTAX:
 
