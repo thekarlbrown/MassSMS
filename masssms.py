@@ -9,7 +9,7 @@
 #    FULLLOGIN:PASSWORD:SERVER:PORT       (Login, may include domain):(Password):(SMTP server):(SMTP port)
 #    FULLLOGIN:PASSWORD:SERVER:PORT
 
-# You can have multiple targets, but each requires correct syntax and go after each other without gaps.
+# You can target multiple phone numbers, but each requires correct syntax and you must place one after each other without gaps.
 #	 TARGET FILE SYNTAX:
 
 #	 5				(Number Of Messages to send)
@@ -38,7 +38,7 @@ import string
 # Carriers as String (default common US)
 carrierString = " What is their carrier? \n    -1: Unknown \n    0:Email Address\n    1: Alltel\n    2: AT&T Or Cingular\n    3: Cricket\n    4: Boost Mobile\n    5: Comcast\n    6: MetroPCS\n    7: Orange\n    8: Rogers\n    9: Sprint\n    10: T-Mobile\n    11: Telus\n    12: Verizon\n    13: Virgin Mobile\n    14: Bell"
 # Carriers as Array (default common US)
-carrierArray = ["YouGoofed", "alltelmessage.com", "txt.att.net","myboostmobile.com","comcastpcs.textmsg.com","mymetropcs.com",  "sms.orange.pl","pcs.rogers.com", "messaging.sprintpcs.com", "tmomail.net", "msg.telus.com", "vtext.com", "vmob1.com", "txt.bell.ca"]
+carrierArray = ["InvalidSelection", "alltelmessage.com", "txt.att.net","myboostmobile.com","comcastpcs.textmsg.com","mymetropcs.com",  "sms.orange.pl","pcs.rogers.com", "messaging.sprintpcs.com", "tmomail.net", "msg.telus.com", "vtext.com", "vmob1.com", "txt.bell.ca"]
 	
 # Generation of garbage text if no message
 def generateRandom():
@@ -92,7 +92,8 @@ def msgLoop(target, cellCarrier, message, goUntil):
 #main program and intro
 print("Mass SMS Bulk SMS/Email Client \n\r")
 print("Accounts and information for the server are stored in accounts.txt \n \r")
-print("No accounts? Any SMTP with starttls support works. Try https://cock.li/register \n\r")
+print("No accounts? Any SMTP with starttls support works. Try www.gmail.com \n\r")
+print("If you are using Gmail, you will need to enable access for less secure apps: https://www.google.com/settings/security/lesssecureapps \n\r")
 # TargetFile parsing for premade/numerous targets
 if len(sys.argv) > 1:
 	targetFile = sys.argv[1]
@@ -119,8 +120,8 @@ if len(sys.argv) > 1:
 else:
 	print("Create a target file and you can do this quicker/automated\n\r")
 	goUntil = input("Send this many: ")
-	target = raw_input("Telephone Number/Email: ")
+	target = input("Telephone Number/Email: ")
 	cellCarrier = input(carrierString + "\n: ")
 	print("What message would you like?\n")
-	message = raw_input("(Type 0 for random text) :")
+	message = input("(Type 0 for random text) :")
 	msgLoop(target, int(cellCarrier), message, int(goUntil))

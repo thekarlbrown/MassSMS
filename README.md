@@ -8,7 +8,11 @@ The linked accounts use basic starttls authentication via your SMTP server
 
 Details on the nature of the accounts.txt and target file are present in the script
 
+If you are using Gmail accounts, you will need to enable access for less secure apps: https://www.google.com/settings/security/lesssecureapps
+
 Note: Be careful with the mass emails/sms. They can be spam depending on your jurisdiction and use, and mail servers can filter them or contact your SMTP server based on how you use them.
   				
 			
 http://www.emailtextmessages.com/ Good list sms conversions for carriers, Google more if necessary
+
+
