@@ -91,8 +91,8 @@ def msgLoop(target, cellCarrier, message, goUntil):
 		tid = tid + 1		
 #main program and intro
 print("Mass SMS Bulk SMS/Email Client \n\r")
-print("Accounts and information for the server are stored in accounts.txt \n \r")
-print("No accounts? Any SMTP with starttls support works. Try www.gmail.com \n\r")
+print("Accounts and information for the server are stored in accounts.txt \n\r")
+print("No accounts? Any SMTP with starttls support works. Try www.gmail.com with server smtp.gmail.com and port 587\n\r")
 print("If you are using Gmail, you will need to enable access for less secure apps: https://www.google.com/settings/security/lesssecureapps \n\r")
 # TargetFile parsing for premade/numerous targets
 if len(sys.argv) > 1:
